@@ -1,0 +1,23 @@
+# show tasks
+GET http://127.0.0.1:8000/tasks
+
+# create task
+POST http://127.0.0.1:8000/task/create
+content-type: application/json
+
+{
+    "title": "sample123",
+    "body": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+# update task
+PUT http://127.0.0.1:8000/task/1
+content-type: application/json
+
+{
+  "title": "updated title",
+  "body": "updated body text"
+}
+
+# delete task
+DELETE http://127.0.0.1:8000/task/2
