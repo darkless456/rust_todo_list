@@ -72,6 +72,7 @@ fn rocket() -> Rocket<Build> {
             routes![tasks_get, task_create, task_update, task_delete],
         )
         .mount("/setting", routes![setting_index, setting_config,])
-        .mount("/public", FileServer::from("static/"))
+        .mount("/public", FileServer::from("./backend/static/"))
+        .mount("/wasm", FileServer::from("./frontend/static/"))
         .register("/", catchers![not_found])
 }
